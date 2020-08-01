@@ -3,9 +3,40 @@
     margin: 0;
 }
 
+.app {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.app__left {
+    flex: 0.9;
+    /* this makes the left side use 90% of its space (for width) */
+}
+
+.app__right {
+    display: flex;
+    flex-direction: column;
+}
+
 .app__header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    justify-content: space-around;
+}
+
+.app__switch {
+    margin: 20px;
+}
+
+.app__stats {
+    display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 990px) {
+    .app {
+        flex-direction: column;
+    }
 }
