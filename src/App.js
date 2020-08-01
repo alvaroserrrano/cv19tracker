@@ -3,6 +3,7 @@ import "./styles/App.css";
 import { sortData } from "./utils";
 import InfoContainer from "./components/InfoContainer";
 import Map from "./components/Map";
+import "leaflet/dist/leaflet.css";
 import LineGraph from "./components/LineGraph";
 import Table from "./components/Table";
 import {
@@ -31,6 +32,11 @@ function App() {
     const [countryInfo, setCountryInfo] = useState({});
     const [tableData, setTableData] = useState([]);
     const [casesType, setCasesType] = useState("cases");
+    const [mapCenter, setMapCenter] = useState({
+        lat: 34.80746,
+        lng: -40.4796
+    });
+    const [mapZoom, setMapZoom] = useState(3);
     useEffect(() => {
         fetch("https://disease.sh/v3/covid-19/all")
             .then(res => res.json())
@@ -119,7 +125,7 @@ function App() {
                                 total={countryInfo.deaths}
                             ></InfoContainer>
                         </div>
-                        <Map></Map>
+                        <Map center={mapCenter} zoom={mapZoom}></Map>
                     </div>
                     <Card className="app__right">
                         <CardContent>
