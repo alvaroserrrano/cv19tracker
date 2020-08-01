@@ -3,6 +3,7 @@ import "./styles/App.css";
 import { sortData } from "./utils";
 import InfoContainer from "./components/InfoContainer";
 import Map from "./components/Map";
+import LineGraph from "./components/LineGraph";
 import Table from "./components/Table";
 import {
     FormControl,
@@ -29,6 +30,7 @@ function App() {
     const [country, setCountry] = useState("worldwide");
     const [countryInfo, setCountryInfo] = useState({});
     const [tableData, setTableData] = useState([]);
+    const [casesType, setCasesType] = useState("cases");
     useEffect(() => {
         fetch("https://disease.sh/v3/covid-19/all")
             .then(res => res.json())
@@ -68,7 +70,6 @@ function App() {
                 setCountryInfo(data);
             });
     };
-    console.log(countryInfo);
     return (
         <ThemeProvider theme={theme}>
             <Paper style={{ height: "100vh" }}>
@@ -125,6 +126,7 @@ function App() {
                             <h3>Live cases by country</h3>
                             <Table countries={tableData}></Table>
                             <h3>Worldwide new cases</h3>
+                            <LineGraph />
                         </CardContent>
                     </Card>
                 </div>
