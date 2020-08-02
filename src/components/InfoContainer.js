@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "../styles/InfoContainer.css";
 import { Card, CardContent, Typography } from "@material-ui/core";
 
-function InfoContainer({ title, cases, total }) {
+function InfoContainer({ title, cases, total, ...props }) {
     return (
-        <Card>
+        <Card onClick={props.onClick} className="infoContainer">
             <CardContent className="card__content" card__content>
                 <Typography
                     color="textSecondary"
