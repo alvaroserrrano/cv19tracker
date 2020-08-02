@@ -56,3 +56,6 @@ export const showDataOnMap = (countries, casesType = "cases") =>
             </Popup>
         </Circle>
     ));
+export const formatStat = stat =>
+    stat ? `+${numeral(stat).format("0.0a")}` : "+0";
+export const formatLargeStat = stat => numeral(stat).format("0,0");

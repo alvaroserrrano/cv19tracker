@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/InfoContainer.css";
 import { Card, CardContent, Typography } from "@material-ui/core";
 
 function InfoContainer({ title, cases, total }) {

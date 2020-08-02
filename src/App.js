@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles/App.css";
-import { sortData } from "./utils";
+import { sortData, formatStat, formatLargeStat } from "./utils";
 import InfoContainer from "./components/InfoContainer";
 import Map from "./components/Map";
 import "leaflet/dist/leaflet.css";
@@ -115,17 +115,17 @@ function App() {
                         <div className="app__stats">
                             <InfoContainer
                                 title="Coronavirus cases"
-                                cases={countryInfo.todayCases}
+                                cases={formatStat(countryInfo.todayCases)}
                                 total={countryInfo.cases}
                             ></InfoContainer>
                             <InfoContainer
                                 title="Recovered"
-                                cases={countryInfo.todayRecovered}
+                                cases={formatStat(countryInfo.todayRecovered)}
                                 total={countryInfo.recovered}
                             ></InfoContainer>
                             <InfoContainer
                                 title="Deaths"
-                                cases={countryInfo.todayDeaths}
+                                cases={formatStat(countryInfo.todayDeaths)}
                                 total={countryInfo.deaths}
                             ></InfoContainer>
                         </div>
