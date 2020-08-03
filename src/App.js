@@ -86,7 +86,7 @@ function App() {
                 <div className="app">
                     <div className="app__left">
                         <div className="app__header">
-                            <h1>Covid19 Eavesdropper</h1>
+                            <h1>Covid19 {casesType}</h1>
                             <FormControl className="app__dropdown">
                                 <Select
                                     variant="filled"
@@ -144,8 +144,8 @@ function App() {
                         <CardContent>
                             <h3>Live cases by country</h3>
                             <Table countries={tableData}></Table>
-                            <h3>Worldwide new cases</h3>
-                            <LineGraph />
+                            <h3>Worldwide new {casesType}</h3>
+                            <LineGraph casesType={casesType} />
                         </CardContent>
                     </Card>
                 </div>
