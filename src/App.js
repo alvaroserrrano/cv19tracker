@@ -5,6 +5,7 @@ import InfoContainer from "./components/InfoContainer";
 import Map from "./components/Map";
 import "leaflet/dist/leaflet.css";
 import LineGraph from "./components/LineGraph";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import Table from "./components/Table";
 import {
     FormControl,
@@ -82,6 +83,7 @@ function App() {
     };
     return (
         <ThemeProvider theme={theme}>
+            <CssBaseline />
             <Paper style={{ height: "100vh" }}>
                 <div className="app">
                     <div className="app__left">
@@ -149,7 +151,10 @@ function App() {
                             <h3>Live cases by country</h3>
                             <Table countries={tableData}></Table>
                             <h3>Worldwide new {casesType}</h3>
-                            <LineGraph casesType={casesType} />
+                            <LineGraph
+                                className="app__graph"
+                                casesType={casesType}
+                            />
                         </CardContent>
                     </Card>
                 </div>

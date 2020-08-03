@@ -78,7 +78,7 @@ function LineGraph({ casesType = "cases", ...props }) {
         fetchData();
     }, [casesType]);
     return (
-        <div>
+        <div className={props.className}>
             {data?.length > 0 && (
                 <Line
                     options={options}
