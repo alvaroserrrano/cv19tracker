@@ -150,7 +150,9 @@ function App() {
                         <CardContent>
                             <h3>Live cases by country</h3>
                             <Table countries={tableData}></Table>
-                            <h3>Worldwide new {casesType}</h3>
+                            <h3 className="app__graphTitle">
+                                Worldwide new {casesType}
+                            </h3>
                             <LineGraph
                                 className="app__graph"
                                 casesType={casesType}
