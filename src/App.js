@@ -114,20 +114,24 @@ function App() {
                         </div>
                         <div className="app__stats">
                             <InfoContainer
+                                isRed
+                                active={casesType === "cases"}
                                 onClick={e => setCasesType("cases")}
                                 title="Coronavirus cases"
                                 cases={formatStat(countryInfo.todayCases)}
                                 total={formatStat(countryInfo.cases)}
                             ></InfoContainer>
                             <InfoContainer
+                                active={casesType === "recovered"}
                                 onClick={e => setCasesType("recovered")}
                                 title="Recovered"
                                 cases={formatStat(countryInfo.todayRecovered)}
                                 total={formatStat(countryInfo.recovered)}
                             ></InfoContainer>
                             <InfoContainer
+                                isRed
+                                active={casesType === "deaths"}
                                 onClick={e => setCasesType("deaths")}
-                                title="Recovered"
                                 title="Deaths"
                                 cases={formatStat(countryInfo.todayDeaths)}
                                 total={formatStat(countryInfo.deaths)}
